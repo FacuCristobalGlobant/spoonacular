@@ -4,26 +4,29 @@ import 'package:lottie/lottie.dart';
 import 'package:page_transition/page_transition.dart';
 
 import '../../core/util/asset_constants.dart';
-import '../../core/util/dimensions.dart';
 
 import 'home.dart';
 
 class SplashScreen extends StatelessWidget {
+  static const double splashScreenSize = 300;
+  static const int splashFadeInDuration = 1;
+  static const int splashScreenDuration = 2000;
+
   const SplashScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return AnimatedSplashScreen(
-      nextScreen: const Home(),
+      nextScreen: Home(),
       splash: Lottie.asset(
         AssetConstants.splashScreen,
       ),
-      duration: Dimensions.splashScreenDuration,
-      splashIconSize: Dimensions.splashScreenSize,
+      duration: splashScreenDuration,
+      splashIconSize: splashScreenSize,
       splashTransition: SplashTransition.fadeTransition,
       pageTransitionType: PageTransitionType.fade,
       animationDuration: const Duration(
-        seconds: Dimensions.splashFadeInDuration,
+        seconds: splashFadeInDuration,
       ),
     );
   }
