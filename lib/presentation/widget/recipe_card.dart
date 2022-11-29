@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:get/get.dart';
+import '../../core/util/asset_constants.dart';
 import '../../core/util/text_constants.dart';
 import '../controller/recipe_summary_controller.dart';
 import 'recipe_flags.dart';
@@ -50,18 +51,28 @@ class RecipeCard extends StatelessWidget {
           children: [
             Stack(
               children: [
-                Image.network(
-                  recipe.image!,
-                  width: Dimensions.recipeImageWidth,
-                  fit: BoxFit.cover,
-                ),
+                recipe.image != null
+                    ? Image.network(
+                        recipe.image!,
+                        height: Dimensions.recipeImageHeight,
+                        width: Dimensions.recipeImageWidth,
+                        fit: BoxFit.cover,
+                      )
+                    : Image.asset(
+                        AssetConstants.noImg,
+                        height: Dimensions.recipeImageHeight,
+                        width: Dimensions.recipeImageWidth,
+                        fit: BoxFit.cover,
+                      ),
                 Positioned(
                   top: Dimensions.timerOffset,
                   left: Dimensions.timerOffset,
                   child: CookingTime(
                     time: TimeOfDay(
-                      hour: recipe.readyInMinutes! ~/ Dimensions.minutesInHour,
-                      minute: recipe.readyInMinutes! % Dimensions.minutesInHour,
+                      hour: (recipe.readyInMinutes ?? 0) ~/
+                          Dimensions.minutesInHour,
+                      minute: (recipe.readyInMinutes ?? 0) %
+                          Dimensions.minutesInHour,
                     ),
                   ),
                 ),
@@ -77,9 +88,9 @@ class RecipeCard extends StatelessWidget {
                     Padding(
                       padding: Dimensions.smallPadding,
                       child: Tooltip(
-                        message: recipe.title,
+                        message: recipe.title ?? TextConstants.emptyString,
                         child: Text(
-                          recipe.title!,
+                          recipe.title ?? TextConstants.emptyString,
                           style: const TextStyle(
                             fontSize: Dimensions.bigFontSize,
                             fontWeight: FontWeight.w300,
@@ -108,7 +119,8 @@ class RecipeCard extends StatelessWidget {
                               ),
                               curve: Curves.easeIn,
                               child: Html(
-                                data: recipe.summary,
+                                data:
+                                    recipe.summary ?? TextConstants.emptyString,
                                 style: {
                                   '*': Style(
                                     textAlign: TextAlign.start,

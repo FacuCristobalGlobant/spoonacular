@@ -8,7 +8,11 @@ import '../../core/util/dimensions.dart';
 import '../../core/util/keys.dart';
 import '../../core/util/palette.dart';
 import '../../core/util/text_constants.dart';
+import '../controller/ingredients_controller.dart';
+import '../controller/nutritional_value_controller.dart';
+import '../controller/recipe_controller.dart';
 import '../controller/recipes_controller.dart';
+import '../controller/similar_recipes_controller.dart';
 import '../widget/company_logo.dart';
 import '../widget/footer.dart';
 import '../widget/not_found.dart';
@@ -16,9 +20,7 @@ import '../widget/recipe_card.dart';
 import '../widget/recipe_card_vertical.dart';
 
 class Home extends StatelessWidget {
-  static const double searchIconWidth = 35;
   static const double sliverAppbarExtendedHeight = 200;
-  static const double fivePercent = 0.05;
   static const EdgeInsets containerPadding = EdgeInsets.all(20);
 
   final RecipesController recipesController = Get.find<RecipesController>();
@@ -40,16 +42,17 @@ class Home extends StatelessWidget {
             ) {
               return SliverAppBar(
                 shadowColor: Colors.black54,
+                automaticallyImplyLeading: false,
                 pinned: true,
                 backgroundColor: Palette.primary,
                 actions: [
                   Padding(
                     padding: EdgeInsets.symmetric(
-                      horizontal: Get.width * fivePercent,
+                      horizontal: Get.width * Dimensions.fivePercent,
                     ),
                     child: Image.asset(
                       AssetConstants.searchIcon,
-                      width: searchIconWidth,
+                      width: Dimensions.searchIconWidth,
                       color: Colors.white,
                       filterQuality: FilterQuality.medium,
                     ),
@@ -57,7 +60,7 @@ class Home extends StatelessWidget {
                 ],
                 title: Padding(
                   padding: EdgeInsets.symmetric(
-                    horizontal: Get.width * fivePercent,
+                    horizontal: Get.width * Dimensions.fivePercent,
                   ),
                   child: const CompanyLogo(),
                 ),
@@ -87,7 +90,7 @@ class Home extends StatelessWidget {
           SliverToBoxAdapter(
             child: Padding(
               padding: EdgeInsets.symmetric(
-                horizontal: (Get.width * fivePercent),
+                horizontal: (Get.width * Dimensions.fivePercent),
               ),
               child: Container(
                 padding: Dimensions.topPadding,
@@ -127,7 +130,7 @@ class Home extends StatelessWidget {
             (state) {
               return SliverPadding(
                 padding: EdgeInsets.symmetric(
-                  horizontal: Get.width * fivePercent,
+                  horizontal: Get.width * Dimensions.fivePercent,
                 ),
                 sliver: SliverLayoutBuilder(
                   builder:
@@ -143,17 +146,67 @@ class Home extends StatelessWidget {
                               builder: (context) {
                                 return Row(
                                   children: [
-                                    SizedBox.shrink(
-                                      child: RecipeCard(
-                                        recipe: state![index * 2],
-                                        cardIndex: index * 2,
+                                    Flexible(
+                                      child: GestureDetector(
+                                        onTap: () {
+                                          Get.find<IngredientsController>()
+                                              .getListOfIngredients(
+                                            state![index * 2].id,
+                                          );
+                                          Get.find<RecipeController>()
+                                              .getRecipeById(
+                                            state[index * 2].id,
+                                          );
+                                          Get.find<NutritionalValueController>()
+                                              .getNutritionalValue(
+                                            state[index * 2].id,
+                                          );
+                                          Get.find<SimilarRecipesController>()
+                                              .getSimilarRecipes(
+                                            state[index * 2].id,
+                                          );
+
+                                          Get.toNamed(
+                                            '${TextConstants.detailsRoute}/${state[index * 2].id}',
+                                          );
+                                        },
+                                        child: RecipeCard(
+                                          recipe: state![index * 2],
+                                          cardIndex: index * 2,
+                                        ),
                                       ),
                                     ),
                                     ((index * 2) + 1 < state.length)
-                                        ? SizedBox.shrink(
-                                            child: RecipeCard(
-                                              recipe: state[(index * 2) + 1],
-                                              cardIndex: (index * 2) + 1,
+                                        ? Flexible(
+                                            child: GestureDetector(
+                                              onTap: () {
+                                                Get.find<
+                                                        IngredientsController>()
+                                                    .getListOfIngredients(
+                                                  state[(index * 2) + 1].id,
+                                                );
+                                                Get.find<RecipeController>()
+                                                    .getRecipeById(
+                                                  state[(index * 2) + 1].id,
+                                                );
+                                                Get.find<
+                                                        NutritionalValueController>()
+                                                    .getNutritionalValue(
+                                                  state[(index * 2) + 1].id,
+                                                );
+                                                Get.find<
+                                                        SimilarRecipesController>()
+                                                    .getSimilarRecipes(
+                                                  state[(index * 2) + 1].id,
+                                                );
+                                                Get.toNamed(
+                                                  '${TextConstants.detailsRoute}/${state[(index * 2) + 1].id}',
+                                                );
+                                              },
+                                              child: RecipeCard(
+                                                recipe: state[(index * 2) + 1],
+                                                cardIndex: (index * 2) + 1,
+                                              ),
                                             ),
                                           )
                                         : SizedBox.shrink(
@@ -177,9 +230,31 @@ class Home extends StatelessWidget {
                           ) {
                             return Builder(
                               builder: (context) {
-                                return RecipeCardVertical(
-                                  recipe: state![index],
-                                  cardIndex: index,
+                                return GestureDetector(
+                                  onTap: () {
+                                    Get.find<IngredientsController>()
+                                        .getListOfIngredients(
+                                      state![index].id,
+                                    );
+                                    Get.find<RecipeController>().getRecipeById(
+                                      state[index].id,
+                                    );
+                                    Get.find<NutritionalValueController>()
+                                        .getNutritionalValue(
+                                      state[index].id,
+                                    );
+                                    Get.find<SimilarRecipesController>()
+                                        .getSimilarRecipes(
+                                      state[index].id,
+                                    );
+                                    Get.toNamed(
+                                      '${TextConstants.detailsRoute}/${state[index].id}',
+                                    );
+                                  },
+                                  child: RecipeCardVertical(
+                                    recipe: state![index],
+                                    cardIndex: index,
+                                  ),
                                 );
                               },
                             );
@@ -196,9 +271,31 @@ class Home extends StatelessWidget {
                           ) {
                             return Builder(
                               builder: (context) {
-                                return RecipeCard(
-                                  recipe: state![index],
-                                  cardIndex: index,
+                                return GestureDetector(
+                                  onTap: () {
+                                    Get.find<IngredientsController>()
+                                        .getListOfIngredients(
+                                      state![index].id,
+                                    );
+                                    Get.find<RecipeController>().getRecipeById(
+                                      state[index].id,
+                                    );
+                                    Get.find<NutritionalValueController>()
+                                        .getNutritionalValue(
+                                      state[index].id,
+                                    );
+                                    Get.find<SimilarRecipesController>()
+                                        .getSimilarRecipes(
+                                      state[index].id,
+                                    );
+                                    Get.toNamed(
+                                      '${TextConstants.detailsRoute}/${state[index].id}',
+                                    );
+                                  },
+                                  child: RecipeCard(
+                                    recipe: state![index],
+                                    cardIndex: index,
+                                  ),
                                 );
                               },
                             );
