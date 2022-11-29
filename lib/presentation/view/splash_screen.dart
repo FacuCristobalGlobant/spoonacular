@@ -5,6 +5,7 @@ import 'package:page_transition/page_transition.dart';
 
 import '../../core/util/asset_constants.dart';
 
+import '../../core/util/text_constants.dart';
 import 'home.dart';
 
 class SplashScreen extends StatelessWidget {
@@ -18,6 +19,7 @@ class SplashScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return AnimatedSplashScreen(
       nextScreen: Home(),
+      nextRoute: TextConstants.homeRoute,
       splash: Lottie.asset(
         AssetConstants.splashScreen,
       ),

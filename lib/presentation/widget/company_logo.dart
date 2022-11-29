@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 
 import '../../core/util/asset_constants.dart';
 import '../../core/util/dimensions.dart';
@@ -12,23 +13,28 @@ class CompanyLogo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Padding(
-          padding: Dimensions.smallPadding,
-          child: SvgPicture.asset(
-            AssetConstants.companyLogo,
-            height: logoSquareSide,
-            width: logoSquareSide,
+    return GestureDetector(
+      onTap: () => Get.toNamed(
+        TextConstants.homeRoute,
+      ),
+      child: Row(
+        children: [
+          Padding(
+            padding: Dimensions.smallPadding,
+            child: SvgPicture.asset(
+              AssetConstants.companyLogo,
+              height: logoSquareSide,
+              width: logoSquareSide,
+            ),
           ),
-        ),
-        const Text(
-          TextConstants.appTitle,
-          style: TextStyle(
-            color: Colors.white,
+          const Text(
+            TextConstants.appTitle,
+            style: TextStyle(
+              color: Colors.white,
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

@@ -49,11 +49,11 @@ class MockApiService extends _i1.Mock implements _i3.ApiService {
   }
 
   @override
-  _i2.Dio get dio => (super.noSuchMethod(
-        Invocation.getter(#dio),
+  _i2.Dio get client => (super.noSuchMethod(
+        Invocation.getter(#client),
         returnValue: _FakeDio_0(
           this,
-          Invocation.getter(#dio),
+          Invocation.getter(#client),
         ),
       ) as _i2.Dio);
   @override
@@ -69,6 +69,70 @@ class MockApiService extends _i1.Mock implements _i3.ApiService {
           Invocation.method(
             #getRandomRecipes,
             [numberOfResults],
+          ),
+        )),
+      ) as _i4.Future<_i2.Response<dynamic>>);
+  @override
+  _i4.Future<_i2.Response<dynamic>> getSimilarRecipes(int? id) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #getSimilarRecipes,
+          [id],
+        ),
+        returnValue:
+            _i4.Future<_i2.Response<dynamic>>.value(_FakeResponse_1<dynamic>(
+          this,
+          Invocation.method(
+            #getSimilarRecipes,
+            [id],
+          ),
+        )),
+      ) as _i4.Future<_i2.Response<dynamic>>);
+  @override
+  _i4.Future<_i2.Response<dynamic>> getRecipeById(int? id) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #getRecipeById,
+          [id],
+        ),
+        returnValue:
+            _i4.Future<_i2.Response<dynamic>>.value(_FakeResponse_1<dynamic>(
+          this,
+          Invocation.method(
+            #getRecipeById,
+            [id],
+          ),
+        )),
+      ) as _i4.Future<_i2.Response<dynamic>>);
+  @override
+  _i4.Future<_i2.Response<dynamic>> getListOfIngredients(int? id) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #getListOfIngredients,
+          [id],
+        ),
+        returnValue:
+            _i4.Future<_i2.Response<dynamic>>.value(_FakeResponse_1<dynamic>(
+          this,
+          Invocation.method(
+            #getListOfIngredients,
+            [id],
+          ),
+        )),
+      ) as _i4.Future<_i2.Response<dynamic>>);
+  @override
+  _i4.Future<_i2.Response<dynamic>> getNutritionalValue(int? id) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #getNutritionalValue,
+          [id],
+        ),
+        returnValue:
+            _i4.Future<_i2.Response<dynamic>>.value(_FakeResponse_1<dynamic>(
+          this,
+          Invocation.method(
+            #getNutritionalValue,
+            [id],
           ),
         )),
       ) as _i4.Future<_i2.Response<dynamic>>);

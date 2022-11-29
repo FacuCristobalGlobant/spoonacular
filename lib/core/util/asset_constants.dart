@@ -10,6 +10,8 @@ abstract class AssetConstants {
   static const String facebookIcon = 'assets/social/facebook.svg';
   static const String twitterIcon = 'assets/social/twitter.svg';
   static const String notFoundImage = 'assets/images/no_recipes_found.png';
+  static const String likeIcon = 'assets/images/like_icon.png';
+  static const String noImg = 'assets/images/no-img.webp';
 }
 
 enum RecipeFlagsEnum {

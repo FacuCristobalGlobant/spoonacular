@@ -36,6 +36,19 @@ mixin _$RecipeModel {
   bool? get veryPopular => throw _privateConstructorUsedError;
   bool? get sustainable => throw _privateConstructorUsedError;
   bool? get lowFodmap => throw _privateConstructorUsedError;
+  int? get weightWatcherSmartPoints => throw _privateConstructorUsedError;
+  String? get gaps => throw _privateConstructorUsedError;
+  int? get preparationMinutes => throw _privateConstructorUsedError;
+  int? get cookingMinutes => throw _privateConstructorUsedError;
+  int? get aggregateLikes => throw _privateConstructorUsedError;
+  int? get healthScore => throw _privateConstructorUsedError;
+  String? get creditsText => throw _privateConstructorUsedError;
+  String? get license => throw _privateConstructorUsedError;
+  String? get sourceName => throw _privateConstructorUsedError;
+  double? get pricePerServing => throw _privateConstructorUsedError;
+  String? get sourceUrl => throw _privateConstructorUsedError;
+  String? get imageType => throw _privateConstructorUsedError;
+  String? get spoonacularSourceUrl => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -65,7 +78,20 @@ abstract class $RecipeModelCopyWith<$Res> {
       bool? cheap,
       bool? veryPopular,
       bool? sustainable,
-      bool? lowFodmap});
+      bool? lowFodmap,
+      int? weightWatcherSmartPoints,
+      String? gaps,
+      int? preparationMinutes,
+      int? cookingMinutes,
+      int? aggregateLikes,
+      int? healthScore,
+      String? creditsText,
+      String? license,
+      String? sourceName,
+      double? pricePerServing,
+      String? sourceUrl,
+      String? imageType,
+      String? spoonacularSourceUrl});
 }
 
 /// @nodoc
@@ -97,6 +123,19 @@ class _$RecipeModelCopyWithImpl<$Res, $Val extends RecipeModel>
     Object? veryPopular = freezed,
     Object? sustainable = freezed,
     Object? lowFodmap = freezed,
+    Object? weightWatcherSmartPoints = freezed,
+    Object? gaps = freezed,
+    Object? preparationMinutes = freezed,
+    Object? cookingMinutes = freezed,
+    Object? aggregateLikes = freezed,
+    Object? healthScore = freezed,
+    Object? creditsText = freezed,
+    Object? license = freezed,
+    Object? sourceName = freezed,
+    Object? pricePerServing = freezed,
+    Object? sourceUrl = freezed,
+    Object? imageType = freezed,
+    Object? spoonacularSourceUrl = freezed,
   }) {
     return _then(_value.copyWith(
       id: freezed == id
@@ -163,6 +202,58 @@ class _$RecipeModelCopyWithImpl<$Res, $Val extends RecipeModel>
           ? _value.lowFodmap
           : lowFodmap // ignore: cast_nullable_to_non_nullable
               as bool?,
+      weightWatcherSmartPoints: freezed == weightWatcherSmartPoints
+          ? _value.weightWatcherSmartPoints
+          : weightWatcherSmartPoints // ignore: cast_nullable_to_non_nullable
+              as int?,
+      gaps: freezed == gaps
+          ? _value.gaps
+          : gaps // ignore: cast_nullable_to_non_nullable
+              as String?,
+      preparationMinutes: freezed == preparationMinutes
+          ? _value.preparationMinutes
+          : preparationMinutes // ignore: cast_nullable_to_non_nullable
+              as int?,
+      cookingMinutes: freezed == cookingMinutes
+          ? _value.cookingMinutes
+          : cookingMinutes // ignore: cast_nullable_to_non_nullable
+              as int?,
+      aggregateLikes: freezed == aggregateLikes
+          ? _value.aggregateLikes
+          : aggregateLikes // ignore: cast_nullable_to_non_nullable
+              as int?,
+      healthScore: freezed == healthScore
+          ? _value.healthScore
+          : healthScore // ignore: cast_nullable_to_non_nullable
+              as int?,
+      creditsText: freezed == creditsText
+          ? _value.creditsText
+          : creditsText // ignore: cast_nullable_to_non_nullable
+              as String?,
+      license: freezed == license
+          ? _value.license
+          : license // ignore: cast_nullable_to_non_nullable
+              as String?,
+      sourceName: freezed == sourceName
+          ? _value.sourceName
+          : sourceName // ignore: cast_nullable_to_non_nullable
+              as String?,
+      pricePerServing: freezed == pricePerServing
+          ? _value.pricePerServing
+          : pricePerServing // ignore: cast_nullable_to_non_nullable
+              as double?,
+      sourceUrl: freezed == sourceUrl
+          ? _value.sourceUrl
+          : sourceUrl // ignore: cast_nullable_to_non_nullable
+              as String?,
+      imageType: freezed == imageType
+          ? _value.imageType
+          : imageType // ignore: cast_nullable_to_non_nullable
+              as String?,
+      spoonacularSourceUrl: freezed == spoonacularSourceUrl
+          ? _value.spoonacularSourceUrl
+          : spoonacularSourceUrl // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 }
@@ -191,7 +282,20 @@ abstract class _$$_RecipeModelCopyWith<$Res>
       bool? cheap,
       bool? veryPopular,
       bool? sustainable,
-      bool? lowFodmap});
+      bool? lowFodmap,
+      int? weightWatcherSmartPoints,
+      String? gaps,
+      int? preparationMinutes,
+      int? cookingMinutes,
+      int? aggregateLikes,
+      int? healthScore,
+      String? creditsText,
+      String? license,
+      String? sourceName,
+      double? pricePerServing,
+      String? sourceUrl,
+      String? imageType,
+      String? spoonacularSourceUrl});
 }
 
 /// @nodoc
@@ -221,6 +325,19 @@ class __$$_RecipeModelCopyWithImpl<$Res>
     Object? veryPopular = freezed,
     Object? sustainable = freezed,
     Object? lowFodmap = freezed,
+    Object? weightWatcherSmartPoints = freezed,
+    Object? gaps = freezed,
+    Object? preparationMinutes = freezed,
+    Object? cookingMinutes = freezed,
+    Object? aggregateLikes = freezed,
+    Object? healthScore = freezed,
+    Object? creditsText = freezed,
+    Object? license = freezed,
+    Object? sourceName = freezed,
+    Object? pricePerServing = freezed,
+    Object? sourceUrl = freezed,
+    Object? imageType = freezed,
+    Object? spoonacularSourceUrl = freezed,
   }) {
     return _then(_$_RecipeModel(
       id: freezed == id
@@ -287,6 +404,58 @@ class __$$_RecipeModelCopyWithImpl<$Res>
           ? _value.lowFodmap
           : lowFodmap // ignore: cast_nullable_to_non_nullable
               as bool?,
+      weightWatcherSmartPoints: freezed == weightWatcherSmartPoints
+          ? _value.weightWatcherSmartPoints
+          : weightWatcherSmartPoints // ignore: cast_nullable_to_non_nullable
+              as int?,
+      gaps: freezed == gaps
+          ? _value.gaps
+          : gaps // ignore: cast_nullable_to_non_nullable
+              as String?,
+      preparationMinutes: freezed == preparationMinutes
+          ? _value.preparationMinutes
+          : preparationMinutes // ignore: cast_nullable_to_non_nullable
+              as int?,
+      cookingMinutes: freezed == cookingMinutes
+          ? _value.cookingMinutes
+          : cookingMinutes // ignore: cast_nullable_to_non_nullable
+              as int?,
+      aggregateLikes: freezed == aggregateLikes
+          ? _value.aggregateLikes
+          : aggregateLikes // ignore: cast_nullable_to_non_nullable
+              as int?,
+      healthScore: freezed == healthScore
+          ? _value.healthScore
+          : healthScore // ignore: cast_nullable_to_non_nullable
+              as int?,
+      creditsText: freezed == creditsText
+          ? _value.creditsText
+          : creditsText // ignore: cast_nullable_to_non_nullable
+              as String?,
+      license: freezed == license
+          ? _value.license
+          : license // ignore: cast_nullable_to_non_nullable
+              as String?,
+      sourceName: freezed == sourceName
+          ? _value.sourceName
+          : sourceName // ignore: cast_nullable_to_non_nullable
+              as String?,
+      pricePerServing: freezed == pricePerServing
+          ? _value.pricePerServing
+          : pricePerServing // ignore: cast_nullable_to_non_nullable
+              as double?,
+      sourceUrl: freezed == sourceUrl
+          ? _value.sourceUrl
+          : sourceUrl // ignore: cast_nullable_to_non_nullable
+              as String?,
+      imageType: freezed == imageType
+          ? _value.imageType
+          : imageType // ignore: cast_nullable_to_non_nullable
+              as String?,
+      spoonacularSourceUrl: freezed == spoonacularSourceUrl
+          ? _value.spoonacularSourceUrl
+          : spoonacularSourceUrl // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -310,7 +479,20 @@ class _$_RecipeModel extends _RecipeModel with DiagnosticableTreeMixin {
       required this.cheap,
       required this.veryPopular,
       required this.sustainable,
-      required this.lowFodmap})
+      required this.lowFodmap,
+      required this.weightWatcherSmartPoints,
+      required this.gaps,
+      required this.preparationMinutes,
+      required this.cookingMinutes,
+      required this.aggregateLikes,
+      required this.healthScore,
+      required this.creditsText,
+      required this.license,
+      required this.sourceName,
+      required this.pricePerServing,
+      required this.sourceUrl,
+      required this.imageType,
+      required this.spoonacularSourceUrl})
       : super._();
 
   factory _$_RecipeModel.fromJson(Map<String, dynamic> json) =>
@@ -348,10 +530,36 @@ class _$_RecipeModel extends _RecipeModel with DiagnosticableTreeMixin {
   final bool? sustainable;
   @override
   final bool? lowFodmap;
+  @override
+  final int? weightWatcherSmartPoints;
+  @override
+  final String? gaps;
+  @override
+  final int? preparationMinutes;
+  @override
+  final int? cookingMinutes;
+  @override
+  final int? aggregateLikes;
+  @override
+  final int? healthScore;
+  @override
+  final String? creditsText;
+  @override
+  final String? license;
+  @override
+  final String? sourceName;
+  @override
+  final double? pricePerServing;
+  @override
+  final String? sourceUrl;
+  @override
+  final String? imageType;
+  @override
+  final String? spoonacularSourceUrl;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'RecipeModel(id: $id, title: $title, summary: $summary, instructions: $instructions, readyInMinutes: $readyInMinutes, servings: $servings, image: $image, vegetarian: $vegetarian, vegan: $vegan, glutenFree: $glutenFree, dairyFree: $dairyFree, veryHealthy: $veryHealthy, cheap: $cheap, veryPopular: $veryPopular, sustainable: $sustainable, lowFodmap: $lowFodmap)';
+    return 'RecipeModel(id: $id, title: $title, summary: $summary, instructions: $instructions, readyInMinutes: $readyInMinutes, servings: $servings, image: $image, vegetarian: $vegetarian, vegan: $vegan, glutenFree: $glutenFree, dairyFree: $dairyFree, veryHealthy: $veryHealthy, cheap: $cheap, veryPopular: $veryPopular, sustainable: $sustainable, lowFodmap: $lowFodmap, weightWatcherSmartPoints: $weightWatcherSmartPoints, gaps: $gaps, preparationMinutes: $preparationMinutes, cookingMinutes: $cookingMinutes, aggregateLikes: $aggregateLikes, healthScore: $healthScore, creditsText: $creditsText, license: $license, sourceName: $sourceName, pricePerServing: $pricePerServing, sourceUrl: $sourceUrl, imageType: $imageType, spoonacularSourceUrl: $spoonacularSourceUrl)';
   }
 
   @override
@@ -374,7 +582,21 @@ class _$_RecipeModel extends _RecipeModel with DiagnosticableTreeMixin {
       ..add(DiagnosticsProperty('cheap', cheap))
       ..add(DiagnosticsProperty('veryPopular', veryPopular))
       ..add(DiagnosticsProperty('sustainable', sustainable))
-      ..add(DiagnosticsProperty('lowFodmap', lowFodmap));
+      ..add(DiagnosticsProperty('lowFodmap', lowFodmap))
+      ..add(DiagnosticsProperty(
+          'weightWatcherSmartPoints', weightWatcherSmartPoints))
+      ..add(DiagnosticsProperty('gaps', gaps))
+      ..add(DiagnosticsProperty('preparationMinutes', preparationMinutes))
+      ..add(DiagnosticsProperty('cookingMinutes', cookingMinutes))
+      ..add(DiagnosticsProperty('aggregateLikes', aggregateLikes))
+      ..add(DiagnosticsProperty('healthScore', healthScore))
+      ..add(DiagnosticsProperty('creditsText', creditsText))
+      ..add(DiagnosticsProperty('license', license))
+      ..add(DiagnosticsProperty('sourceName', sourceName))
+      ..add(DiagnosticsProperty('pricePerServing', pricePerServing))
+      ..add(DiagnosticsProperty('sourceUrl', sourceUrl))
+      ..add(DiagnosticsProperty('imageType', imageType))
+      ..add(DiagnosticsProperty('spoonacularSourceUrl', spoonacularSourceUrl));
   }
 
   @override
@@ -407,29 +629,68 @@ class _$_RecipeModel extends _RecipeModel with DiagnosticableTreeMixin {
             (identical(other.sustainable, sustainable) ||
                 other.sustainable == sustainable) &&
             (identical(other.lowFodmap, lowFodmap) ||
-                other.lowFodmap == lowFodmap));
+                other.lowFodmap == lowFodmap) &&
+            (identical(
+                    other.weightWatcherSmartPoints, weightWatcherSmartPoints) ||
+                other.weightWatcherSmartPoints == weightWatcherSmartPoints) &&
+            (identical(other.gaps, gaps) || other.gaps == gaps) &&
+            (identical(other.preparationMinutes, preparationMinutes) ||
+                other.preparationMinutes == preparationMinutes) &&
+            (identical(other.cookingMinutes, cookingMinutes) ||
+                other.cookingMinutes == cookingMinutes) &&
+            (identical(other.aggregateLikes, aggregateLikes) ||
+                other.aggregateLikes == aggregateLikes) &&
+            (identical(other.healthScore, healthScore) ||
+                other.healthScore == healthScore) &&
+            (identical(other.creditsText, creditsText) ||
+                other.creditsText == creditsText) &&
+            (identical(other.license, license) || other.license == license) &&
+            (identical(other.sourceName, sourceName) ||
+                other.sourceName == sourceName) &&
+            (identical(other.pricePerServing, pricePerServing) ||
+                other.pricePerServing == pricePerServing) &&
+            (identical(other.sourceUrl, sourceUrl) ||
+                other.sourceUrl == sourceUrl) &&
+            (identical(other.imageType, imageType) ||
+                other.imageType == imageType) &&
+            (identical(other.spoonacularSourceUrl, spoonacularSourceUrl) ||
+                other.spoonacularSourceUrl == spoonacularSourceUrl));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      id,
-      title,
-      summary,
-      instructions,
-      readyInMinutes,
-      servings,
-      image,
-      vegetarian,
-      vegan,
-      glutenFree,
-      dairyFree,
-      veryHealthy,
-      cheap,
-      veryPopular,
-      sustainable,
-      lowFodmap);
+  int get hashCode => Object.hashAll([
+        runtimeType,
+        id,
+        title,
+        summary,
+        instructions,
+        readyInMinutes,
+        servings,
+        image,
+        vegetarian,
+        vegan,
+        glutenFree,
+        dairyFree,
+        veryHealthy,
+        cheap,
+        veryPopular,
+        sustainable,
+        lowFodmap,
+        weightWatcherSmartPoints,
+        gaps,
+        preparationMinutes,
+        cookingMinutes,
+        aggregateLikes,
+        healthScore,
+        creditsText,
+        license,
+        sourceName,
+        pricePerServing,
+        sourceUrl,
+        imageType,
+        spoonacularSourceUrl
+      ]);
 
   @JsonKey(ignore: true)
   @override
@@ -462,7 +723,20 @@ abstract class _RecipeModel extends RecipeModel {
       required final bool? cheap,
       required final bool? veryPopular,
       required final bool? sustainable,
-      required final bool? lowFodmap}) = _$_RecipeModel;
+      required final bool? lowFodmap,
+      required final int? weightWatcherSmartPoints,
+      required final String? gaps,
+      required final int? preparationMinutes,
+      required final int? cookingMinutes,
+      required final int? aggregateLikes,
+      required final int? healthScore,
+      required final String? creditsText,
+      required final String? license,
+      required final String? sourceName,
+      required final double? pricePerServing,
+      required final String? sourceUrl,
+      required final String? imageType,
+      required final String? spoonacularSourceUrl}) = _$_RecipeModel;
   const _RecipeModel._() : super._();
 
   factory _RecipeModel.fromJson(Map<String, dynamic> json) =
@@ -500,6 +774,32 @@ abstract class _RecipeModel extends RecipeModel {
   bool? get sustainable;
   @override
   bool? get lowFodmap;
+  @override
+  int? get weightWatcherSmartPoints;
+  @override
+  String? get gaps;
+  @override
+  int? get preparationMinutes;
+  @override
+  int? get cookingMinutes;
+  @override
+  int? get aggregateLikes;
+  @override
+  int? get healthScore;
+  @override
+  String? get creditsText;
+  @override
+  String? get license;
+  @override
+  String? get sourceName;
+  @override
+  double? get pricePerServing;
+  @override
+  String? get sourceUrl;
+  @override
+  String? get imageType;
+  @override
+  String? get spoonacularSourceUrl;
   @override
   @JsonKey(ignore: true)
   _$$_RecipeModelCopyWith<_$_RecipeModel> get copyWith =>

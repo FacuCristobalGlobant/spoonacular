@@ -1,4 +1,5 @@
 abstract class TextConstants {
+  static const String similarRecipesTitle = 'Similar recipes';
   static const String appTitle = 'Spoonacular';
   static const String apiKeyValue = 'API_KEY';
   static const String slogan = 'All Your Food. One Place.';
@@ -13,4 +14,11 @@ abstract class TextConstants {
   static const String socialMediaTitle = 'Follow us';
   static const String apiExceptionMessage = 'response status not 200';
   static const String notFoundMessage = 'No recipes found';
+  static const String homeRoute = '/home';
+  static const String detailsRoute = '/details';
+  static const String searchRoute = '/search';
+  static const String splashScreenRoute = '/';
+  static const String emptyString = '';
+  static const String ingredientsTitle = 'Ingredients';
+  static const String instructionsTitle = 'Instructions';
 }

@@ -25,6 +25,19 @@ class RecipeModel with _$RecipeModel {
     required bool? veryPopular,
     required bool? sustainable,
     required bool? lowFodmap,
+    required int? weightWatcherSmartPoints,
+    required String? gaps,
+    required int? preparationMinutes,
+    required int? cookingMinutes,
+    required int? aggregateLikes,
+    required int? healthScore,
+    required String? creditsText,
+    required String? license,
+    required String? sourceName,
+    required double? pricePerServing,
+    required String? sourceUrl,
+    required String? imageType,
+    required String? spoonacularSourceUrl,
   }) = _RecipeModel;
 
   factory RecipeModel.fromJson(Map<String, Object?> json) =>
