@@ -7,8 +7,17 @@ abstract class Dimensions {
   static const EdgeInsets horizontalPadding = EdgeInsets.symmetric(
     horizontal: 50,
   );
+  static const EdgeInsets smallHorizontalPadding = EdgeInsets.symmetric(
+    horizontal: 20,
+  );
+  static const EdgeInsets smallTopPadding = EdgeInsets.only(
+    top: 10,
+  );
   static const EdgeInsets topPadding = EdgeInsets.only(
     top: 20,
+  );
+  static const EdgeInsets bigTopPadding = EdgeInsets.only(
+    top: 50,
   );
   static const EdgeInsets verticalPadding = EdgeInsets.symmetric(
     vertical: 50,

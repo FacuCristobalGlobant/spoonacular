@@ -35,6 +35,19 @@ class ApiService {
     return response;
   }
 
+  Future<dio.Response> getSearchResult(
+    Map<String, dynamic> queryParameters,
+  ) async {
+    final response = await client.get(
+      '${ApiConstants.recipesEndpoint}${ApiConstants.searchEndpoint}',
+      options: dio.Options(
+        headers: headers,
+      ),
+      queryParameters: queryParameters,
+    );
+    return response;
+  }
+
   Future<dio.Response> getRecipeById(int id) async {
     final response = await client.get(
       '${ApiConstants.recipesEndpoint}$id/${ApiConstants.infoEndpoint}',

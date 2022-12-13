@@ -1,6 +1,9 @@
 import 'package:dio/dio.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_instance/get_instance.dart';
+import 'domain/usecase/implementations/get_search_results_usecase.dart';
+import 'presentation/controller/search_results_controller.dart';
+import 'presentation/controller/recipe_filter_controller.dart';
 import 'core/util/api_constants.dart';
 import 'presentation/controller/similar_recipes_controller.dart';
 import 'domain/usecase/implementations/get_similar_recipes_usecase.dart';
@@ -77,6 +80,18 @@ class RecipesBinding {
     );
     Get.lazyPut(
       () => SimilarRecipesController(),
+      fenix: true,
+    );
+    Get.lazyPut(
+      () => RecipeFilterController(),
+      fenix: true,
+    );
+    Get.lazyPut(
+      () => SearchResultsController(),
+      fenix: true,
+    );
+    Get.lazyPut(
+      () => GetSearchResultsUseCase(),
       fenix: true,
     );
   }

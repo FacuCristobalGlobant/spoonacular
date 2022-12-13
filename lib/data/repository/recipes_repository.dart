@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 
 import '../../core/util/api_constants.dart';
 import '../../core/util/text_constants.dart';
+import '../../domain/usecase/search_data_object.dart';
 import '../datasource/remote/api_service.dart';
 import '../model/ingredient_model.dart';
 import '../model/recipe_model.dart';
@@ -29,6 +30,44 @@ class RecipesRepository implements IRepository {
         requestOptions: e.requestOptions,
       );
     }
+  }
+
+  @override
+  Future<List<RecipeModel>> getSearchResults(
+    SearchDataObject parameters,
+  ) async {
+    List<RecipeModel> listOfRecipes = [];
+    try {
+      final Map<String, dynamic> queryParameters = {
+        ApiConstants.numberQueryParameter: ApiConstants.numberOfSearchResults,
+        'cuisine': parameters.cuisine,
+        'mealType': parameters.mealType,
+        'maxCarbs': parameters.maxCarbs,
+        'maxProtein': parameters.maxProtein,
+        'maxCalories': parameters.maxCalories,
+        'maxFat': parameters.maxFat,
+        'maxCaffeine': parameters.maxCaffeine,
+        'maxCopper': parameters.maxCopper,
+        'maxCalcium': parameters.maxCalcium,
+      };
+      final response = await apiService.getSearchResult(
+        queryParameters,
+      );
+      if (response.statusCode == HttpStatus.ok) {
+        final List<dynamic> recipes = response.data['results'];
+        for (var recipe in recipes) {
+          RecipeModel currentRecipe = RecipeModel.fromJson(recipe);
+          listOfRecipes.add(currentRecipe);
+        }
+      } else {
+        throw Exception(TextConstants.apiExceptionMessage);
+      }
+    } on DioError catch (e) {
+      throw DioError(
+        requestOptions: e.requestOptions,
+      );
+    }
+    return listOfRecipes;
   }
 
   @override

@@ -14,7 +14,7 @@ abstract class Routes {
     ),
     GetPage(
       name: TextConstants.searchRoute,
-      page: () => const Search(),
+      page: () => Search(),
     ),
     GetPage(
       name: '${TextConstants.detailsRoute}/:id',

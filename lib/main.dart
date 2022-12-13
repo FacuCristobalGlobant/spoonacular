@@ -23,6 +23,7 @@ class Spoonacular extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       getPages: Routes.routes,
+      debugShowCheckedModeBanner: false,
       initialRoute: TextConstants.splashScreenRoute,
       title: TextConstants.appTitle,
       theme: ThemeData(

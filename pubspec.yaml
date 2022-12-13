@@ -76,6 +76,7 @@ flutter:
   assets:
     - .env
     - assets/splash_screen.json
+    - assets/loader.json
     - assets/images/company-logo.svg
     - assets/images/background.webp
     - assets/images/recipe_search_icon.png
@@ -85,6 +86,8 @@ flutter:
     - assets/social/
     - assets/images/like_icon.png
     - assets/images/no-img.webp
+    - assets/images/menu-image.webp
+    - assets/images/search_bg.webp
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
@@ -104,6 +107,12 @@ flutter:
         - asset: assets/fonts/Montserrat-Light.ttf
         - asset: assets/fonts/Montserrat-Medium.ttf
         - asset: assets/fonts/Montserrat-Thin.ttf
+
+    - family: NothingYouCouldDo
+      fonts:
+        - asset: assets/fonts/NothingYouCouldDo-Regular.ttf
+
+
 
   # fonts:
   #   - family: Schyler

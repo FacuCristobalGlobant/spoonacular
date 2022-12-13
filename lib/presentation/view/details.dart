@@ -15,17 +15,15 @@ import '../controller/similar_recipes_controller.dart';
 import '../widget/company_logo.dart';
 import '../widget/footer.dart';
 import '../widget/ingredient_card.dart';
-import '../widget/recipe_card_vertical.dart';
 import '../widget/recipe_flags.dart';
+import '../widget/recipe_grid_widget.dart';
 import '../widget/section_title.dart';
 
 class Details extends StatelessWidget {
-  static const double similarRecipeWidth = 200;
   static const double gridPadding = 20;
   static const double gridMaxCrossAxisExtent = 250;
   static const double ingredientCrossAxisExtent = 200;
   static const double gridSpacing = 10;
-  static const int similarRecipesTitleMaxLines = 1;
   static const String idParameterField = 'id';
   static const double gridChildAspectRatio = .8;
   static const String noSimilarRecipesMessage = 'No similar recipes found';
@@ -52,55 +50,6 @@ class Details extends StatelessWidget {
         )
       },
     );
-  }
-
-  Widget _buildSimilarRecipes(List<RecipeModel>? state) {
-    {
-      List<Widget> children = [];
-      state?.forEach((recipe) {
-        children.add(
-          Container(
-            padding: Dimensions.smallerPadding,
-            width: similarRecipeWidth,
-            child: GestureDetector(
-              onTap: () {
-                ingredientsController.getListOfIngredients(
-                  recipe.id,
-                );
-                recipeController.getRecipeById(
-                  recipe.id,
-                );
-                nutritionalValueController.getNutritionalValue(
-                  recipe.id,
-                );
-                similarRecipesController.getSimilarRecipes(
-                  recipe.id,
-                );
-
-                Get.toNamed(
-                  '${TextConstants.detailsRoute}/${recipe.id}',
-                );
-              },
-              child: RecipeCardVertical(
-                recipe: recipe,
-                fontSize: Dimensions.smallFontSize,
-                titleMaxLines: similarRecipesTitleMaxLines,
-              ),
-            ),
-          ),
-        );
-      });
-      return Padding(
-        padding: EdgeInsets.symmetric(
-          horizontal: Get.width * .01,
-          vertical: gridPadding,
-        ),
-        child: Wrap(
-          alignment: WrapAlignment.center,
-          children: children,
-        ),
-      );
-    }
   }
 
   Widget _buildIngredients(List<IngredientModel>? state) {
@@ -164,7 +113,7 @@ class Details extends StatelessWidget {
                             child: Image.asset(
                               AssetConstants.likeIcon,
                               width: Dimensions.searchIconWidth,
-                              filterQuality: FilterQuality.medium,
+                              filterQuality: FilterQuality.high,
                             ),
                           ),
                         ],
@@ -289,15 +238,20 @@ class Details extends StatelessWidget {
         automaticallyImplyLeading: false,
         title: const CompanyLogo(),
         actions: [
-          Padding(
-            padding: EdgeInsets.symmetric(
-              horizontal: Get.width * Dimensions.fivePercent,
+          GestureDetector(
+            child: Padding(
+              padding: EdgeInsets.symmetric(
+                horizontal: Get.width * Dimensions.fivePercent,
+              ),
+              child: Image.asset(
+                AssetConstants.searchIcon,
+                width: Dimensions.searchIconWidth,
+                color: Colors.white,
+                filterQuality: FilterQuality.medium,
+              ),
             ),
-            child: Image.asset(
-              AssetConstants.searchIcon,
-              width: Dimensions.searchIconWidth,
-              color: Colors.white,
-              filterQuality: FilterQuality.medium,
+            onTap: () => Get.toNamed(
+              TextConstants.searchRoute,
             ),
           ),
         ],
@@ -415,7 +369,9 @@ class Details extends StatelessWidget {
             title: TextConstants.similarRecipesTitle,
           ),
           similarRecipesController.obx(
-            (state) => _buildSimilarRecipes(state),
+            (state) => RecipeGrid(
+              listOfRecipes: state!,
+            ),
             onLoading: const Center(
               child: CircularProgressIndicator(
                 color: Palette.primary,
