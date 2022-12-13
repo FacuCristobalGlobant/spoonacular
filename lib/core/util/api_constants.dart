@@ -11,10 +11,12 @@ abstract class ApiConstants {
   static const String ingredientsEndpoint = 'ingredientWidget.json';
   static const String nutritionalValueEndpoint = 'nutritionLabel';
   static const String similarRecipesEndpoint = 'similar';
+  static const String searchEndpoint = 'complexSearch';
   static const String headerKey = 'x-api-key';
   static const String numberQueryParameter = 'number';
   static const String apiResponseRecipesData = 'recipes';
   static const String apiResponseIngredientsData = 'ingredients';
   static const int numberOfRandomRecipes = 10;
   static const int numberOfSimilarRecipes = 5;
+  static const int numberOfSearchResults = 6;
 }

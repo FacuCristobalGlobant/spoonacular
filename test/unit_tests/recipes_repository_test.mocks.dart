@@ -89,6 +89,23 @@ class MockApiService extends _i1.Mock implements _i3.ApiService {
         )),
       ) as _i4.Future<_i2.Response<dynamic>>);
   @override
+  _i4.Future<_i2.Response<dynamic>> getSearchResult(
+          Map<String, dynamic>? queryParameters) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #getSearchResult,
+          [queryParameters],
+        ),
+        returnValue:
+            _i4.Future<_i2.Response<dynamic>>.value(_FakeResponse_1<dynamic>(
+          this,
+          Invocation.method(
+            #getSearchResult,
+            [queryParameters],
+          ),
+        )),
+      ) as _i4.Future<_i2.Response<dynamic>>);
+  @override
   _i4.Future<_i2.Response<dynamic>> getRecipeById(int? id) =>
       (super.noSuchMethod(
         Invocation.method(

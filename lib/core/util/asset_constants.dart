@@ -1,10 +1,12 @@
 abstract class AssetConstants {
   static const String environmentVariables = '.env';
   static const String splashScreen = 'assets/splash_screen.json';
+  static const String loadingAnimation = 'assets/loader.json';
   static const String companyLogo = 'assets/images/company-logo.svg';
   static const String sliverBackground = 'assets/images/background.webp';
   static const String searchIcon = 'assets/images/recipe_search_icon.png';
   static const String montserratFont = 'Montserrat';
+  static const String nothingFont = 'NothingYouCouldDo';
   static const String timerIcon = 'assets/images/clock_icon.webp';
   static const String instagramIcon = 'assets/social/instagram.svg';
   static const String facebookIcon = 'assets/social/facebook.svg';
@@ -12,6 +14,8 @@ abstract class AssetConstants {
   static const String notFoundImage = 'assets/images/no_recipes_found.png';
   static const String likeIcon = 'assets/images/like_icon.png';
   static const String noImg = 'assets/images/no-img.webp';
+  static const String menuImage = 'assets/images/menu-image.webp';
+  static const String searchBackground = 'assets/images/search_bg.webp';
 }
 
 enum RecipeFlagsEnum {

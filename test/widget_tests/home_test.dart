@@ -9,7 +9,7 @@ import 'package:spoonacular/data/model/recipe_model.dart';
 import 'package:spoonacular/presentation/controller/recipe_summary_controller.dart';
 import 'package:spoonacular/presentation/controller/recipes_controller.dart';
 import 'package:spoonacular/presentation/view/home.dart';
-import 'package:spoonacular/presentation/widget/recipe_card_vertical.dart';
+import 'package:spoonacular/presentation/widget/recipe_card.dart';
 
 import '../recipe_mock_data.dart';
 import 'recipes_controller_mock.dart';
@@ -58,7 +58,7 @@ void main() {
           await tester.pumpAndSettle();
 
           expect(
-            find.byType(RecipeCardVertical),
+            find.byType(RecipeCard),
             findsOneWidget,
           );
 
