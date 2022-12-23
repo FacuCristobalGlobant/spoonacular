@@ -1,5 +1,6 @@
 abstract class ApiConstants {
   static const String apiKeyParameterQuery = 'API_KEY';
+  static const String apiKey = 'a6380c276b474fb48bd6159ffe38deba';
   static const String baseUrl = 'https://api.spoonacular.com/';
   static const String imageBase =
       'https://spoonacular.com/cdn/ingredients_250x250/';
@@ -13,6 +14,7 @@ abstract class ApiConstants {
   static const String similarRecipesEndpoint = 'similar';
   static const String searchEndpoint = 'complexSearch';
   static const String headerKey = 'x-api-key';
+  static const String queryParamKey = 'apiKey';
   static const String numberQueryParameter = 'number';
   static const String apiResponseRecipesData = 'recipes';
   static const String apiResponseIngredientsData = 'ingredients';
